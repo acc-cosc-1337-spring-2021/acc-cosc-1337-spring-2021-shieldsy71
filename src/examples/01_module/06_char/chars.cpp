@@ -1,5 +1,5 @@
 //cpp
-
+#include char.h
 
 /*
 Function get_char_ascii_value with a char parameter
