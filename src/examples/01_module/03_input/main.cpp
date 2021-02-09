@@ -17,7 +17,7 @@ int main()
 	int units;
 	double rate;
 
-	cout<<"Enter units";
+	cout<<"Enter units ";
 	cin>>units;
 
 	cout<<"Enter rate: ";
