@@ -3,6 +3,8 @@
 #include "vars.h"
 #include "input.h"
 #include "numbers.h"
+#include"auto.h"
+#include "chars.h"
 #include<string>
 
 TEST_CASE("Verify Test Configuration", "verification") {
@@ -38,12 +40,14 @@ TEST_CASE("Verify add to double 1 function", "verify decimal comparison inconsis
 
 /*test case add_to_double_2 with 1 as parameter*/
 
-TEST_CASE("Verufy auto int function", "should return 10")
+TEST_CASE("Verify auto int function", "should return 10")
 {
 	REQUIRE(auto_int() == 10);
 }
 
 /*test case char test ASCII values */
+
+/*test case string test ASCII values Joe characters are equal to 74, 111, and 101*/
 
 TEST_CASE("Verify get char ascii function", "should return ascii value")
 {
@@ -54,5 +58,5 @@ TEST_CASE("Verify get char ascii function", "should return ascii value")
 }
 
 
-/*test case string test ASCII values Joe characters are equal to 74, 111, and 101*/
+
 

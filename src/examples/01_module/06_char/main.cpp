@@ -9,10 +9,10 @@ int main()
 		auto letter = 'a';
 		cout<<letter<<"\n";
 
-		char 1 = '9';
-		cout<<1<<"\n";
+		char l = '9';
+		cout<<l<<"\n";
 
-		cout<<"Letter a ASCII vlaue is: " <<get_chart_ascii('a');
+		cout<<"Letter a ASCII vlaue is: " <<get_char_ascii('a');
 
 	return 0;
 }
