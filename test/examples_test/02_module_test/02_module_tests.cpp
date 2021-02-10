@@ -2,6 +2,7 @@
 #include "catch.hpp"
 #include"../src/examples/02_module/01_expressions/expressions.h"
 #include "casting.h"
+#include "overflow.h"
 
 TEST_CASE("Verify Test Configuration", "verification") 
 {
@@ -9,29 +10,36 @@ TEST_CASE("Verify Test Configuration", "verification")
 }
 
 /*Test case operator precedence 1 with function argument values 12, 6 and 3 returns 14*/
-TEST_CASE("Verify op prec 1")
+TEST_CASE("Verify op prec 1", "order of operations")
 {
-	REQUIRE(operator_procedence_1(12, 6, 3) == 14);
+	REQUIRE(operator_precedence_1(12, 6, 3) == 14);
 }
 /*Test case operator precedence 2 with function argument values 12, 6 and 3 returns 6*/
-
+TEST_CASE("Verify op prec 2", "order of operations")
+{
+	REQUIRE(operator_precedence_2(12, 6, 3) == 6);
+}
 /*Test case operator precedence 3 with function argument values 12, 6 and 3 returns 6*/
 
 /*Test case operator precedence 3 with function argument values 12, 6 and 3 returns 6*/
 
 /*Test case convert_to_double to show that multiplying int and double returns a double*/
-
-/*Test case convert double to int to show that a double converted to int truncates 
-the decimal portion*/
 TEST_CASE("Test convert to double", "int * double, int converted to double")
 {
 	REQUIRE(convert_to_double(10, .35)==3.5);
 }
+/*Test case convert double to int to show that a double converted to int truncates 
+the decimal portion*/
+TEST_CASE("Test convert double to int", "double to int, truncate decimals")
+{
+	REQUIRE(convert_double_to_int(10.375) ==10);
+	REQUIRE(convert_double_to_int(10.875) ==10);
+}
 /*Test case static cast double int to show that a double casted to int truncates
 decimal portion*/
-TEST_CASE("Test convert to double", "int * double, int converted to double")
+TEST_CASE("Test static cast double to int", "double to int, truncate decimals")
 {
-	REQUIRE(static_cast double_int(10.375)==10);
+	REQUIRE(static_cast_double_int(10.375)==10);
 }
 /*Test int overflow to show adding 1 to 2147483647 returns -2147483648*/
 TEST_CASE("Test int overflow", "Create C++ weirdness")

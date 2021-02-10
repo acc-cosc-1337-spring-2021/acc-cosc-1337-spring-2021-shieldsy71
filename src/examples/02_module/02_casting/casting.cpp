@@ -19,7 +19,11 @@ double parameter
 @return the num parameter
 */
 //int convert_double_to_int(double num)
-
+int convert_double_to_int(double num)
+{
+    
+    return num;
+}
 /*
 Function static_cast_double_int with a double parameter that does
 a static_cast conversion to int
@@ -29,6 +33,6 @@ a static_cast conversion to int
 */
 int static_cast_double_int(double num)
 {
-    auto ret = static_cast<int>(num);
+    auto val = static_cast<int>(num);
     return val;
 }
