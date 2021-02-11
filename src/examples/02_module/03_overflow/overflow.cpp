@@ -13,3 +13,9 @@ int int_overflow()
     
     return max;
 }
+int double_underflow()
+{
+    auto min = __DBL_MIN__;
+    min = min / 10;
+    return min;
+}

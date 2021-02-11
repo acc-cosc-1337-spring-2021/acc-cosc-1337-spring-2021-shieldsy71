@@ -3,6 +3,7 @@
 #include"../src/examples/02_module/01_expressions/expressions.h"
 #include "casting.h"
 #include "overflow.h"
+#include "constants.h"
 
 TEST_CASE("Verify Test Configuration", "verification") 
 {
@@ -48,6 +49,10 @@ TEST_CASE("Test int overflow", "Create C++ weirdness")
 }
 /*Test get radius of a circle with 10 to show that it returns 314.159*/
 
+TEST_CASE ("Test get area of circle function", "show constant use")
+{
+	REQUIRE(get_area_of_circle(10)== 314.159);
+}
 /*Test int data size */
 
 /*Test multi assign addition*/
