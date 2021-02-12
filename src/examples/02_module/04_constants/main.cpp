@@ -1,7 +1,7 @@
 #include<iostream>
 #include"constants.h"
 
-using std::cout, using std::cin;
+using std::cout; using std::cin;
 
 int main()
 {
