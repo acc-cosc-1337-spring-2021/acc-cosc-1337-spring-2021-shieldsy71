@@ -20,17 +20,18 @@ int main()
 	cout<<"Enter the meal amount";
 	cin>>meal_amount;
 
-	get_sales_tax_amount(meal_amount);
-	tax_amount = get_sales_tax_amount();
-	return tax_amount;
+	
+	tax_amount =  get_sales_tax_amount(meal_amount);
+	
+	
 
 	cout<<"Enter the tip amount";
 	cin>>tip_rate;
 
-	get_tip_amount(meal_amount, tip_rate);
-	tip_amount = get_tip_amount();
+	tip_amount = get_tip_amount(meal_amount, tip_rate);
+	
 
-	return tip_amount;
+	
 
 	double total = tip_amount + tax_amount + meal_amount;
 
