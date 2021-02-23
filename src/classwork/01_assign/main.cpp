@@ -8,16 +8,16 @@ using std::cout;	using std::cin;
 int main() 
 {
 	int num;
-	cout<<"Enter a number";
+	cout<<"Enter a number: ";
 	cin>>num;
 	
 	
 	int result = multiply_numbers(num);
-	cout <<"The result is "<< result;
+	cout <<"The result is "<< result<<"\n";
 
 	int num1 = 4;
-	int result2 = multiply_numbers(num1);
-	cout << "The new result is " << result2;
+	result = multiply_numbers(num1);
+	cout << "The new result is " << result;
 
 	return 0;
 }
