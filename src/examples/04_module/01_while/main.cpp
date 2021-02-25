@@ -2,6 +2,6 @@
 
 int main() 
 {
-
+	std::string name = ("John");
 	return 0;
 }
