@@ -14,6 +14,7 @@ int main()
 	cin>>grade;
 
 	cout<<get_letter_grade_using_if(grade);
+	cout<<"\n";
 	cout<<get_letter_grade_using_switch(grade);
 
 	return 0;

@@ -38,29 +38,26 @@ std::string get_letter_grade_using_if(int grade)
     return letter;
 }
 
-
-
 std::string get_letter_grade_using_switch(int grade)
-
 
 {
     std::string option;
 
     switch (grade)
     {
-        case 1:
+        case 90 ... 100:
             option = "A";
             break;
-        case 2:
+        case 80 ... 89:
             option = "B";
             break;
-        case 3:
+        case 70 ... 79:
             option = "C";
             break;
-        case 4:
+        case 60 ... 69:
             option = "D";
             break;
-        case 5:
+        case 50 ... 59:
             option = "F";
             break;
 
@@ -69,7 +66,6 @@ std::string get_letter_grade_using_switch(int grade)
             break;
     
     }
-
 
     return option; 
 }
