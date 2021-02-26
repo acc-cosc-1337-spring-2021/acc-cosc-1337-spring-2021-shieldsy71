@@ -23,9 +23,10 @@ std::string menu(int num)
             break;
         case 3:
             option = "Option 3";
+            break;
         case 4:
             option = "Option 4";
-
+            break;
     default:
         option = "Invalid Option";
         break;
