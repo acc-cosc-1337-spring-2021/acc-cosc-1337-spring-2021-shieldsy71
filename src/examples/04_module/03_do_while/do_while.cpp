@@ -13,12 +13,12 @@ void prompt_user()
        cout<<"Type y or Y to continue...";
        cin>>choice;
     } 
-    while (!(choice == "y" || choice == "Y"))
+    while (!(choice == 'y' || choice == 'Y'));
     
 
 }
 
-
+/*
 void run_menu()
 {
     cout<<"1-Accounting/n";
@@ -26,3 +26,4 @@ void run_menu()
     cout<<"3-exit\n";
 
 }
+*/

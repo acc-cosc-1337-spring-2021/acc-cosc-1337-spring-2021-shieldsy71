@@ -11,7 +11,13 @@ The function assigns 20 to num1 and 50 to num2
 @return does not return a value
 */
 
+void pass_by_val_and_ref(int num1)
+{
+    auto num = 20
+    num1 = num;
 
+    
+}
 
 /*
 Function pass_by_const_ref 

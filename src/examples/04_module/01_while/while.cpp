@@ -9,10 +9,11 @@ using std::string; using std::cout;
 int sum_of_squares(int num)
 {
     auto sum = 0;
-    while(num > 0)
+    auto index = 1;
+    while(index <= num)
     {
-        sum = sum + num * num;
-        num --;
+        sum = sum + index * index;
+        num ++;
     }
     return sum;
 }
@@ -30,13 +31,13 @@ l
 
 */
 
-void display(string str)
+void display(std::string str)
 {
-    std:size_t indx = 0;
-    while(indx < str.size())
+    auto index = 0;
+    while(index < str.length())
     {
-        cout<<str[indx]<<"\n";
-        indx++;
+        std::cout<<str[index]<<"\n";
+        index++;
         
     }
 
