@@ -2,7 +2,7 @@
 #include<iostream>
 #include<vector>
 
-using std::vector;
+using std::vector; using std::cout; 
 
 /*
 Function loop_vector_w_index 
@@ -23,6 +23,10 @@ Displays the incoming parameter vector numbers to screen using an indexed for lo
 @param vector<int>
 */
 
+void loop_vector_w_index_val(std::vector<int> nums)
+{
+    for(size_t i = 0
+}
 
 
 /*

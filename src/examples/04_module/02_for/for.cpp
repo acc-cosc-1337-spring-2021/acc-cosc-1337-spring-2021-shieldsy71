@@ -19,7 +19,7 @@ RESULT:
 
 void display_numbers(int num)
 {
-    for(auto i = 0; i < num; ++i)
+    for(auto i = 0; i < num; i++)
     {
         cout<<i+1<<"\n";
     }

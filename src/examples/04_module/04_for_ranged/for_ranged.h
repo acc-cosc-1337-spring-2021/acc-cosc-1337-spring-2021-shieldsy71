@@ -10,3 +10,5 @@ void loop_string_w_for_loop(std::string str);
 
 
 void loop_string_w_for_range(std::string str);
+
+void loop_string_w_for_range_ref(std::string str);

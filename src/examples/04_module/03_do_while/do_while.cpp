@@ -18,7 +18,7 @@ void prompt_user()
 
 }
 
-/*
+
 void run_menu()
 {
     cout<<"1-Accounting/n";
@@ -26,4 +26,3 @@ void run_menu()
     cout<<"3-exit\n";
 
 }
-*/

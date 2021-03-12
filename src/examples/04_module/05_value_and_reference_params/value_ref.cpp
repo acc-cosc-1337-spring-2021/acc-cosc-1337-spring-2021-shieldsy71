@@ -13,7 +13,7 @@ The function assigns 20 to num1 and 50 to num2
 
 void pass_by_val_and_ref(int num1)
 {
-    auto num = 20
+    auto num = 20;
     num1 = num;
 
     
@@ -27,3 +27,10 @@ Try to assign a value to num1, generates error.
 
 @return does not return a value
 */
+
+//int calculate_weekly_pay(int salary)
+
+int caculate_weekly_pay(int hours, int rate)
+{
+    return hours * rate;
+}
