@@ -16,7 +16,7 @@ double get_gc_content(const string& dna)
     {
         if (dna[i] == 'G' || dna[i]=='C')
         {
-            gc_content++
+            gc_content++;
         }
     }
 
