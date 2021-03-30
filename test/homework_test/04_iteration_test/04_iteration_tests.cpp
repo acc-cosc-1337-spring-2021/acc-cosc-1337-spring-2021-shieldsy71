@@ -23,7 +23,7 @@ TEST_CASE("Verify function reverses the string paramter", "returns a string")
 	REQUIRE(get_reverse_string("CGCTATAG")== "GATATCGC");
 }
 
-/*
+
 
 TEST_CASE("Verify function swaps character values A/T & G/C", "returns a string") 
 {
@@ -31,4 +31,4 @@ TEST_CASE("Verify function swaps character values A/T & G/C", "returns a string"
 	REQUIRE(get_dna_complement("CCCGGAAAAT")== "ATTTTCCGGG");
 }
 
-*/
+
