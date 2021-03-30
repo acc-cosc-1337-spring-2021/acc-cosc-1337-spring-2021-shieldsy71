@@ -1,7 +1,9 @@
 //write include statements
-
+#include "dna.h"
+#include<iostream>
+#include<string>
 //write using statements
-
+using std::cout; using std::cin; using std::string;
 
 /*
 Write code that prompts user to enter 1 for Get GC Content, 
@@ -12,5 +14,13 @@ user enters a y or Y.
 */
 int main() 
 {
+
+	string test = "AGCTATAG";
+
+	get_reverse_string(test);
+
+
+
+
 	return 0;
 }

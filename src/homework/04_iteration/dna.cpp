@@ -36,13 +36,14 @@ string get_reverse_string(string dna)
 {
     string reverse_string;
   
-    for (int i = 0; i < dna.size(); i++)
+    for (std::size_t i = dna.size() -1; i >= 0; --i)
     {
         reverse_string.push_back(dna[i]);
     }
 
     return reverse_string;
 }
+
 
 /*
 Write prototype for function get_dna_complement that
