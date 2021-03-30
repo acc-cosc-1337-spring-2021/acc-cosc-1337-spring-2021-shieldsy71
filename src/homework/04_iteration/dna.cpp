@@ -1,5 +1,6 @@
 #include "dna.h"
 #include<string>
+#include<iostream>
 using std::string;
 
 /*
@@ -20,7 +21,7 @@ double get_gc_content(const string& dna)
         }
     }
 
-    double percent = gc_content / dna.size;
+    double percent = gc_content / dna.size();
     return percent;
 
 }
@@ -37,7 +38,7 @@ string get_reverse_string(string dna)
   
     for (int i = 0; i < dna.size(); i++)
     {
-        reverse_string = dna[i];
+        reverse_string.push_back(dna[i]);
     }
 
     return reverse_string;
@@ -52,13 +53,12 @@ b. iterate local string variable and
     replace A with T, T with A, C with G and G with C
 c. return string
 
-*/
+
 
 string get_dna_complement(string dna)
 {
-    
 
-
-
-
+  
 }
+
+*/

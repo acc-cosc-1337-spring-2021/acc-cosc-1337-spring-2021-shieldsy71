@@ -14,3 +14,10 @@ TEST_CASE("Verify function tallies the number of G/C characters in a string", "r
 	REQUIRE(get_gc_content("AGCTATAG")== .375);
 	REQUIRE(get_gc_content("CGCTATAG")== .5);
 }
+
+
+TEST_CASE("Verify function reverses the string paramter", "returns a string") 
+{
+	REQUIRE(get_reverse_string("AGCTATAG")== "GATATCGA");
+	REQUIRE(get_reverse_string("CGCTATAG")== "GATATCGC");
+}
