@@ -8,13 +8,13 @@ a const reference string parameter and returns a double
 */
 #include<string>
 
-double get_gc_content(std::string);
+double get_gc_content(const string& dna);
 
 /*
 Write prototype for function get_reverse_string that 
 accepts a string parameter and returns a string
 */
-string get_reverse_string(std::string);
+string get_reverse_string(string dna);
 
 
 /*
@@ -23,5 +23,5 @@ accepts a string and returns a string
 
 
 
-string get_dna_complement(std::string);
+string get_dna_complement(string dna);
 */
