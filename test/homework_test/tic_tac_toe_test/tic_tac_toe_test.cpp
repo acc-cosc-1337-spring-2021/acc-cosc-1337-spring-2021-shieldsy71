@@ -10,6 +10,19 @@ TEST_CASE("Verify Test Configuration", "verification") {
 
 TEST_CASE("Verify the game_over function 1") 
 {
+	TicTacToe game;
+	
+	game = start_game("X");
+
 	TicTacToe::mark_board(1);
-	REQUIRE(TicTacToe.game_over() == false);
+	TicTacToe::mark_board(2);
+	TicTacToe::mark_board(3);
+	TicTacToe::mark_board(4);
+	TicTacToe::mark_board(5);
+	TicTacToe::mark_board(6);
+	TicTacToe::mark_board(7);
+	TicTacToe::mark_board(8);
+	TicTacToe::mark_board(9);
+
+	REQUIRE(game.game_over() == true);
 }

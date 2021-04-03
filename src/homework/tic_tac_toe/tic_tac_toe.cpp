@@ -36,14 +36,9 @@ string TicTacToe::get_player()const
 //No parameters. Iterate vector of strings pegs to. Display a tic tac toe board in 3x 3 format.
 void TicTacToe::display_board()const
 {
-    for(int i = 0; i<9; i++)
-    {
-        cout<<pegs[i];
-        if((i + 1)% 3 == 0)
-        {
-            "\n";
-        }
-    }
+    cout<<pegs[0]<<"|"<<pegs[0]<<"|"<<pegs[0]<<"|"<<"\n";
+    cout<<pegs[0]<<"|"<<pegs[0]<<"|"<<pegs[0]<<"|"<<"\n";
+    cout<<pegs[0]<<"|"<<pegs[0]<<"|"<<pegs[0]<<"|"<<"\n";
 }
 
 
@@ -56,7 +51,7 @@ void TicTacToe::set_next_player()
     }
     else
     {
-        player == "X";
+        player = "X";
     }
     
 }
