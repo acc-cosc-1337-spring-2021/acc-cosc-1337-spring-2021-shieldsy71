@@ -14,7 +14,7 @@ bool TicTacToe::game_over()
 //First_player function argument value must be X or O. In function set player(private variable) to first_player function argument. Call the clear_board function.
 void TicTacToe::start_game(string first_player)
 {
-    first_player == "X" || first_player == "x" || first_player == "O" ||first_player == "o";
+    first_player == "X" || first_player == "x" || first_player == "O" || first_player == "o";
     player = first_player;
     clear_board();
 }
@@ -36,9 +36,9 @@ string TicTacToe::get_player()const
 //No parameters. Iterate vector of strings pegs to. Display a tic tac toe board in 3x 3 format.
 void TicTacToe::display_board()const
 {
-    cout<<pegs[0]<<"|"<<pegs[0]<<"|"<<pegs[0]<<"|"<<"\n";
-    cout<<pegs[0]<<"|"<<pegs[0]<<"|"<<pegs[0]<<"|"<<"\n";
-    cout<<pegs[0]<<"|"<<pegs[0]<<"|"<<pegs[0]<<"|"<<"\n";
+    cout<<pegs[0]<<"|"<<pegs[1]<<"|"<<pegs[2]<<"|"<<"\n";
+    cout<<pegs[3]<<"|"<<pegs[4]<<"|"<<pegs[5]<<"|"<<"\n";
+    cout<<pegs[6]<<"|"<<pegs[7]<<"|"<<pegs[8]<<"|"<<"\n";
 }
 
 
@@ -59,14 +59,17 @@ void TicTacToe::set_next_player()
 //No parameters, return false if vector of strings pegs has available slot by checking for a “ “(space)in each element. Otherwise return true
 bool TicTacToe::check_board_full()
 {
+    bool boardFull = true;
     for (auto i = 0; i<9; i++)
     {
         if(pegs[i]== " ")
         {
-            return false;
+            boardFull = false;
+            break;
         }
-    return true;    
+      
     }
+    return boardFull;
 }
 
 //No parameters, Set all 9 elements to a “ “ (space)

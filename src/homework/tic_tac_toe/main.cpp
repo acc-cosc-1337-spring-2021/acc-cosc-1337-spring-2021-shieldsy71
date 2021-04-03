@@ -7,20 +7,25 @@ using std::cout; using std::cin; using std::string; using std::vector;
 
 int main() 
 {
+TicTacToe game;
 
-int choice;
+int position;
+string choice;
+game.start_game(choice);
 
-/*
-do
-{
 	cout<<"Enter X or O: ";
 	cin>>choice;
-
-	void start_game(string first_player);
-
+	
+do
+{
+	
+	cout<<"Enter a board position 1 - 9: ";
+	cin>>position;
+	game.display_board();
+	game.mark_board(position);
+	
 
 }
-	while (game_over() == false);
+	while (game.game_over() == false);
 	return 0;
 }
-*/
