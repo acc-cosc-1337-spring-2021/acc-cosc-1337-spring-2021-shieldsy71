@@ -14,8 +14,12 @@ bool TicTacToe::game_over()
 //First_player function argument value must be X or O. In function set player(private variable) to first_player function argument. Call the clear_board function.
 void TicTacToe::start_game(string first_player)
 {
-    first_player == "X" || first_player == "x" || first_player == "O" || first_player == "o";
+    if (first_player == "X" || first_player == "O")
+    {
     player = first_player;
+    }
+    
+
     clear_board();
 }
 
@@ -48,12 +52,13 @@ void TicTacToe::set_next_player()
     if (player == "X")
     {
         player = "O";
+        
     }
     else
     {
         player = "X";
     }
-    
+  
 }
 
 //No parameters, return false if vector of strings pegs has available slot by checking for a “ “(space)in each element. Otherwise return true
@@ -76,4 +81,5 @@ bool TicTacToe::check_board_full()
 void TicTacToe::clear_board()
 {
     vector<string> pegs {9, " "};
+    
 }

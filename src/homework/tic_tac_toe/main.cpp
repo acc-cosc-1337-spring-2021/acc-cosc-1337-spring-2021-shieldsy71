@@ -8,22 +8,21 @@ using std::cout; using std::cin; using std::string; using std::vector;
 int main() 
 {
 TicTacToe game;
-
 int position;
 string choice;
-game.start_game(choice);
+
 
 	cout<<"Enter X or O: ";
 	cin>>choice;
-	
+	game.start_game(choice);
 do
 {
 	
 	cout<<"Enter a board position 1 - 9: ";
 	cin>>position;
-	game.display_board();
+	//game.start_game(choice);
 	game.mark_board(position);
-	
+	game.display_board();
 
 }
 	while (game.game_over() == false);

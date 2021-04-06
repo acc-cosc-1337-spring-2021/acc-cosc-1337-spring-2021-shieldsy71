@@ -43,7 +43,7 @@ class TicTacToe
 
 
         //Class member variable 1) (initialize to 9 “ “(spaces)
-        vector<string> pegs;
+        vector<string> pegs{9, " "};
 
 
 };
