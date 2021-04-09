@@ -27,7 +27,24 @@ class TicTacToe
         //No parameters. Iterate vector of strings pegs to. Display a tic tac toe board in 3x 3 format.
         void display_board()const;
 
+
+        string get_winner();
+
     private:
+
+        bool check_column_win();
+
+       
+
+        bool check_row_win();
+
+
+        bool check_diagonal_win();
+
+
+        void set_winner();
+
+
         //Set player. If private variable player X player is O else player is X.
         void set_next_player();
 
@@ -45,6 +62,7 @@ class TicTacToe
         //Class member variable 1) (initialize to 9 “ “(spaces)
         vector<string> pegs{9, " "};
 
-
+        //Stores the winner of the game X, O or C.
+        string winner;
 };
 
