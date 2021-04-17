@@ -5,6 +5,32 @@
 #include<vector>
 using std::cout; using std::cin; using std::string; using std::vector;
 
+
+std::ostream& operator<<(std::ostream& out, const TicTacToe& game)
+{
+    
+    out<<game.pegs[0]<<"|"<<game.pegs[1]<<"|"<<game.pegs[2]<<"|"<<"\n";
+    out<<game.pegs[3]<<"|"<<game.pegs[4]<<"|"<<game.pegs[5]<<"|"<<"\n";
+    out<<game.pegs[6]<<"|"<<game.pegs[7]<<"|"<<game.pegs[8]<<"|"<<"\n";
+    
+    return out;
+}
+std::istream& operator>>(std::istream& in, TicTacToe& game)
+{
+    int position;
+    std::cout<<"Enter a board position 1 - 9: ";
+    in>>position;
+    if (position > 0 && position < 10)
+    {
+        game.mark_board(position);
+    }
+    else
+	{
+		cout<<"Try again with a valid position. ";
+	}
+    return in;
+}
+
  //return check_board_full function return value
 bool TicTacToe::game_over()
 {
@@ -25,9 +51,10 @@ bool TicTacToe::game_over()
     }
     else if (check_board_full() == true)
     {
-        set_winner();
+        winner = "C";
         return true;
     }
+
     else
     {
         return false;
@@ -54,6 +81,7 @@ string TicTacToe::get_player()const
 {
    return player;
 }
+/*
 //No parameters. Iterate vector of strings pegs to. Display a tic tac toe board in 3x 3 format.
 void TicTacToe::display_board()const
 {
@@ -61,6 +89,7 @@ void TicTacToe::display_board()const
     cout<<pegs[3]<<"|"<<pegs[4]<<"|"<<pegs[5]<<"|"<<"\n";
     cout<<pegs[6]<<"|"<<pegs[7]<<"|"<<pegs[8]<<"|"<<"\n";
 }
+*/
 string TicTacToe::get_winner()
 {
     return winner;
@@ -132,18 +161,16 @@ bool TicTacToe::check_diagonal_win()
 //If player is X set winner to O otherwise set winner to X
 void TicTacToe::set_winner()
 {
-    if(check_board_full() == true)
-    {
-        winner = "C";
-    }
-    else if(player == "X")
+    
+    if(player == "X")
     {
         winner = "O";
     }
-    else
+    else 
     {
         winner = "X";
     }
+   
 }
 //Set player. If private variable player X player is O else player is X.
 void TicTacToe::set_next_player()

@@ -1,4 +1,5 @@
 #include "tic_tac_toe.h"
+#include "tic_tac_toe_manager.h"
 #include<iostream>
 #include<string>
 #include<vector>
@@ -7,42 +8,36 @@ using std::cout; using std::cin; using std::string; using std::vector;
 
 int main() 
 {
-
-int position;
 string choice;
 char go;
-
+TicTacToeManager manager;
 do
 {
 	TicTacToe game;
-	cout<<"Enter X or O: ";
-	cin>>choice;
-	if (choice == "X" || choice == "O")
+	while(choice != "X" && choice != "O")
 	{
+		cout<<"Enter X or O: ";
+		cin>>choice;
+	}
 	game.start_game(choice);
 		do
 		{
-			cout<<"Enter a board position 1 - 9: ";
-			cin>>position;
-			if (position > 0 && position < 10)
-			{
-				game.mark_board(position);
-				game.display_board();
-			}
-			else
-			{
-				cout<<"Try again with a valid position. ";
-			}
+			cin>>game;
+			cout<<game;
 		}
 	while (game.game_over() == false);
 	cout<<"The winner is "<<game.get_winner();
+	manager.save_game(game);
+
+	int o, x, t;
+	manager.get_winner_total(o, x, t);
+
+	//cout<<manager;
+
 	cout<<"\nWould you like to use the program again? Type the letter 'Y' to continue or 'N' to exit: ";
 	cin>>go;
-	}
-	else
-	{
-		cout<<"Enter a valid character. ";
-	}
+	
+	
 }
 while (go == 'y' || go == 'Y');
 return 0;

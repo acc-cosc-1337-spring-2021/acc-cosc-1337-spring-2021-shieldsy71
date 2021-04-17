@@ -1,4 +1,6 @@
 //h
+#ifndef TIC_TAC_TOE_H
+#define TIC_TAC_TOE_H
 #include<iostream>
 #include<string>
 #include<vector>
@@ -7,6 +9,9 @@ using std::string; using std::vector;
 
 class TicTacToe
 {
+friend std::ostream& operator<<(std::ostream& out, const TicTacToe& game);
+friend std::istream& operator>>(std::istream& in, TicTacToe& game);
+
     public:
         //return check_board_full function return value
         bool game_over();
@@ -23,10 +28,10 @@ class TicTacToe
         //Return the player value
         string get_player()const;
 
-
+        /*
         //No parameters. Iterate vector of strings pegs to. Display a tic tac toe board in 3x 3 format.
         void display_board()const;
-
+        */
 
         string get_winner();
 
@@ -66,3 +71,4 @@ class TicTacToe
         string winner;
 };
 
+#endif
