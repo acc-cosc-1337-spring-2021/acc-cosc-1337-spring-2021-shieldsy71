@@ -202,7 +202,10 @@ bool TicTacToe::check_board_full()
 //No parameters, Set all 9 elements to a “ “ (space)
 void TicTacToe::clear_board()
 {
-    vector<string> pegs {9, " "};
+    for(auto& pegs: pegs)
+    {
+        pegs = " ";
+    }
 }
 //Stores the winner of the game X, O or C.
 string winner;
