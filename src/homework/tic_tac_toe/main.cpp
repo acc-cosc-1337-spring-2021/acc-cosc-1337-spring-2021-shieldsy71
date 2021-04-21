@@ -26,13 +26,13 @@ do
 			cout<<game;
 		}
 	while (game.game_over() == false);
-	cout<<"The winner is "<<game.get_winner();
+	cout<<"The winner is "<<game.get_winner()<<"\n";
 	manager.save_game(game);
 
 	int o, x, t;
 	manager.get_winner_total(o, x, t);
 
-	//cout<<manager;
+	cout<<manager;
 
 	cout<<"\nWould you like to use the program again? Type the letter 'Y' to continue or 'N' to exit: ";
 	cin>>go;

@@ -24,7 +24,7 @@ class TicTacToeManager
         //Use references to get the winners. Don't use cout!!!!!!!!
         void get_winner_total(int& o, int& x, int&t);
 
-        
+        TicTacToeManager();
 
     private:
 

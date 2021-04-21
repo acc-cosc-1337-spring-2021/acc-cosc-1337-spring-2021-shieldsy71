@@ -45,14 +45,12 @@ void TicTacToeManager::get_winner_total(int& o, int& x, int&t)
 //from TicTacToe to update x, o, or tie totals.
 std::vector<TicTacToe> games;
 
-//	initialize to 0
-int x_win = 0;
-
-//	initialize to 0
-int o_win = 0;
-
-//	initialize to 0
-int ties = 0;
+TicTacToeManager::TicTacToeManager()
+{
+    x_win = 0;
+    o_win = 0;
+    ties = 0;
+}
 
 //if winner X increment x_win, if winner O increment o_win, and else increment ties 
 void TicTacToeManager::update_winner_count(string winner)
