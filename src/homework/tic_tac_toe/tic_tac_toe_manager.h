@@ -5,8 +5,9 @@
 #include<string>
 #include<vector>
 #include "tic_tac_toe.h"
+#include <memory>
 
-using std::string; using std::vector;
+using std::string; using std::vector; using std::unique_ptr; using std::make_unique;
 
 class TicTacToeManager
 {
@@ -18,28 +19,28 @@ class TicTacToeManager
         
         //add the TicTacToe to games vector with push_back, call update winner count pass the winner 
         //from TicTacToe to update x, o, or tie totals.
-        void save_game(TicTacToe& b);
+        void save_game(unique_ptr<TicTacToe>& game);
 
 
         //Use references to get the winners. Don't use cout!!!!!!!!
         void get_winner_total(int& o, int& x, int&t);
 
-        TicTacToeManager();
+        
 
     private:
 
         //add the TicTacToe to games vector with push_back, call update winner count pass the winner 
         //from TicTacToe to update x, o, or tie totals.
-        std::vector<TicTacToe> games;
+        std::vector<unique_ptr<TicTacToe>> games;
 
-        //	initialize to 0
-        int x_win;
+        //	initialize to 0?
+        int x_win = 0;
 
-        //	initialize to 0
-        int o_win;
+        //	initialize to 0?
+        int o_win = 0;
 
-        //	initialize to 0
-        int ties;
+        //	initialize to 0?
+        int ties = 0;
 
         //if winner X increment x_win, if winner O increment o_win, and else increment ties 
         void update_winner_count(string winner);

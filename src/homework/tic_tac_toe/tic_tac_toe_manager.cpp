@@ -4,16 +4,17 @@
 #include<iostream>
 #include<string>
 #include<vector>
-using std::cout; using std::cin; using std::string; using std::vector;
+#include <memory>
+using std::cout; using std::cin; using std::string; using std::vector; using std::unique_ptr; using std::make_unique;
 
 
 //Overload <<-Loop through vector of TicTacToe and call the TicTacToe cout overload. 
 std::ostream& operator<<(std::ostream& out, const TicTacToeManager& manager)
 {
     
-    for(auto g: manager.games)
+    for(auto& game: manager.games)
     {    
-        out<<g<<"\n";
+        out<<*game<<"\n";
     }
 
     out<<"O wins: "<<manager.o_win<<"\n";
@@ -26,10 +27,11 @@ std::ostream& operator<<(std::ostream& out, const TicTacToeManager& manager)
  
 //add the TicTacToe to games vector with push_back, call update winner count pass the winner 
 //from TicTacToe to update x, o, or tie totals.
-void TicTacToeManager::save_game(TicTacToe& b)
+void TicTacToeManager::save_game(unique_ptr<TicTacToe>& game)
 {
-    games.push_back(b);
-    update_winner_count(b.get_winner());
+    update_winner_count(game->get_winner());
+    games.push_back(game);
+   
 }
 
 
@@ -41,16 +43,9 @@ void TicTacToeManager::get_winner_total(int& o, int& x, int&t)
     t = ties;
 }
 
-//add the TicTacToe to games vector with push_back, call update winner count pass the winner 
-//from TicTacToe to update x, o, or tie totals.
-std::vector<TicTacToe> games;
 
-TicTacToeManager::TicTacToeManager()
-{
-    x_win = 0;
-    o_win = 0;
-    ties = 0;
-}
+std::vector<unique_ptr<TicTacToe>> games;
+
 
 //if winner X increment x_win, if winner O increment o_win, and else increment ties 
 void TicTacToeManager::update_winner_count(string winner)
