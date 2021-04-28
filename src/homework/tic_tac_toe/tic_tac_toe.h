@@ -14,8 +14,8 @@ friend std::ostream& operator<<(std::ostream& out, std::unique_ptr<TicTacToe>& g
 friend std::istream& operator>>(std::istream& in, std::unique_ptr<TicTacToe>& game);
 
     public:
-        TicTacToe(){};
-        TicTacToe(int size) : pegs(size * size, " "){}
+        
+        TicTacToe(int size) : pegs(size * size, " "){};
 
         //return check_board_full function return value
         bool game_over();

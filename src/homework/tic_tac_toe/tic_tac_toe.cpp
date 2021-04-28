@@ -6,6 +6,9 @@
 using std::cout; using std::cin; using std::string; using std::vector;
 
 
+
+
+
 std::ostream& operator<<(std::ostream& out, std::unique_ptr<TicTacToe>& game)
 {
     
@@ -75,11 +78,6 @@ std::istream& operator>>(std::istream& in, TicTacToe& game)
     return in;
 }
 
-TicTacToe::TicTacToe(int size)
-{
-    std::vector<string> vect;
-    TicTacToe(size):vect(size*size, " "){};
-}
 
  //return check_board_full function return value
 bool TicTacToe::game_over()

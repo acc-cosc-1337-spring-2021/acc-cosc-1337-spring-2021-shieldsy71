@@ -43,7 +43,7 @@ do
 	
 	cout<<"The winner is "<<game->get_winner()<<"\n";
 	
-	manager.save_game(*game);
+	manager.save_game(game);
 	manager.get_winner_total(o, x, t);
 
 	cout<<manager;
