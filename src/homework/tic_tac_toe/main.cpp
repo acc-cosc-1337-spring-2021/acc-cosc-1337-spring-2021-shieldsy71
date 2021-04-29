@@ -21,7 +21,7 @@ unique_ptr<TicTacToe> game;
 
 do
 {
-	while (grid != 3 || grid != 4)
+	while (grid != 3 && grid != 4)
 		{
 		cout<<"Welcome to Tic Tac Toe!\n";
 		cout<<"Enter 3 to play on a 3x3 grid or a 4 to play on a 4x4 grid: ";
@@ -37,11 +37,11 @@ do
 		game = make_unique<TicTacToe4>();
 	}
 	
-	cin>>game;
-	cout<<game;
+	cin>>*game;
+	cout<<*game;
 		
 	
-	cout<<"The winner is "<<game->get_winner()<<"\n";
+	
 	
 	manager.save_game(game);
 	manager.get_winner_total(o, x, t);

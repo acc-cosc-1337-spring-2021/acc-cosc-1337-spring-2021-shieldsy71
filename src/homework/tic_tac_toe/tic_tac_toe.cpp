@@ -5,16 +5,11 @@
 #include<vector>
 using std::cout; using std::cin; using std::string; using std::vector;
 
-
-
-
-
 std::ostream& operator<<(std::ostream& out, TicTacToe& game)
 {
-    
     if (game.pegs.size() == 9)
     {
-        for(std::size_t i = 1; i <= game.pegs.size(); i++)
+        for(int i = 0;i < 9; i++)
         {    
             out<<game.pegs[i];
             if (i == 0 || i == 1 || i == 3 || i == 4 || i == 6 || i == 7)
@@ -28,23 +23,21 @@ std::ostream& operator<<(std::ostream& out, TicTacToe& game)
         }
         return out;
     }
-    
     else if (game.pegs.size() == 16)
     {
-        for(std::size_t i = 1; i <= game.pegs.size(); i++)
+        for(int i = 0; i < 16; i++)
         {    
             out<<game.pegs[i];
             if (i == 0 || i == 1 || i == 2 || i == 4 || i == 5 || i == 6 || i == 8 || i == 9 || i == 10 || i == 12 || i == 13 || i == 14)
             {
                 out<<"|";
             }
-            if(i == 3 || i == 7 || i == 11)
+            if(i == 3 || i == 7 || i == 11 || i == 14)
             {
                 out<<"\n";
             }
         }
     }
-
     return out;
 }
 std::istream& operator>>(std::istream& in, TicTacToe& game)
@@ -64,17 +57,22 @@ std::istream& operator>>(std::istream& in, TicTacToe& game)
 
     while (game.game_over() == false)
     {
-        std::cout<<"Enter a board position 1 - 9: ";
+        std::cout<<"Enter a board position 1 - 9 for the 3x3 grid or 1 - 16 for the 4x4 grid: ";
         in>>position;
-    if (position > 0 && position < 10)
-    {
-        game.mark_board(position);
+        
+        if (position > 0 && position < 17)
+        {
+            
+            game.mark_board(position);
+            cout<<game;
+        }
+        else
+	    {
+		    cout<<"Try again with a valid position. ";
+	    }
+    
     }
-    else
-	{
-		cout<<"Try again with a valid position. ";
-	}
-    }
+    cout<<"The winner is "<<game.get_winner()<<"\n";
     return in;
 }
 
