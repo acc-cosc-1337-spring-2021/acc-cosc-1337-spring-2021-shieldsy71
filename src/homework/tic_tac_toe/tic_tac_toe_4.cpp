@@ -14,21 +14,26 @@ else
 false
 */
 
-bool TicTacToe::check_column_win()
+bool TicTacToe4::check_column_win()
 {
-    if (pegs[3] == pegs[0] && pegs[6] == pegs[3] && pegs[6] != " ")
+    if (pegs[0] == pegs[4] && pegs[4] == pegs[8] && pegs[12] == pegs[8] && pegs[8] != " ")
     {
-        winner = player;
+        //winner = player;
         return true;
     }
-    else if (pegs[4] == pegs[1] && pegs[7] == pegs[4] && pegs[4] != " ")
+    else if (pegs[1] == pegs[5] && pegs[5] == pegs[9] && pegs[9] == pegs[13] && pegs[9] != " ")
     {
-        winner = player;
+        //winner = player;
         return true;
     }
-    else if (pegs[5] == pegs[2] && pegs[8] == pegs[5] && pegs[5] != " ")
+    else if (pegs[2] == pegs[6] && pegs[6] == pegs[10] && pegs[10] == pegs[14] && pegs[10] != " ")
     {
-        winner = player;
+        //winner = player;
+        return true;
+    }
+    else if (pegs[3] == pegs[7] && pegs[7] == pegs[11] && pegs[11] == pegs[15] && pegs[11] != " ")
+    {
+        //winner = player;
         return true;
     }
     else 
@@ -47,21 +52,26 @@ Win by row if
 12,13,14, 15 are equal
 */
 
-bool TicTacToe::check_row_win()
+bool TicTacToe4::check_row_win()
 {
-    if (pegs[2] == pegs[0] && pegs[1] == pegs[2] && pegs[2] != " ")
+    if (pegs[0] == pegs[1] && pegs[1] == pegs[2] && pegs[2] == pegs[3] && pegs[2] != " ")
     {
-        winner = player;
+        //winner = player;
         return true;
     }
-    else if (pegs[4] == pegs[3] && pegs[5] == pegs[4] && pegs[4] != " ")
+    else if (pegs[4] == pegs[5] && pegs[5] == pegs[6] && pegs[6] == pegs[7] && pegs[5] != " ")
     {
-        winner = player;
+        //winner = player;
         return true;
     }
-    else if (pegs[7] == pegs[6] && pegs[8] == pegs[7] && pegs[7] != " ")
+    else if (pegs[8] == pegs[9] && pegs[9] == pegs[10] && pegs[10] == pegs[11] && pegs[9] != " ")
     {
-        winner = player;
+        //winner = player;
+        return true;
+    }
+    else if (pegs[12] == pegs[13] && pegs[13] == pegs[14] && pegs[14] == pegs[15] && pegs[13] != " ")
+    {
+        //winner = player;
         return true;
     }
     else 
@@ -80,16 +90,16 @@ Win diagonally
 12,13,14, 15
 
 */
-bool TicTacToe::check_diagonal_win()
+bool TicTacToe4::check_diagonal_win()
 {
-    if (pegs[4] == pegs[0] && pegs[4] == pegs[8] && pegs[4] != " ")
+    if (pegs[0] == pegs[5] && pegs[5] == pegs[10] && pegs[10] == pegs[15] && pegs[10] != " ")
     {
-        winner = player;
+        //winner = player;
         return true;
     }
-    else if (pegs[4] == pegs[2] && pegs[6] == pegs[4] && pegs[4] != " ")
+    else if (pegs[12] == pegs[9] && pegs[9] == pegs[6] && pegs[6] == pegs[3] && pegs[9] != " ")
     {
-        winner = player;
+        //winner = player;
         return true;
     }
     else 

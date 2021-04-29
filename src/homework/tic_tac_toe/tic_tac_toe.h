@@ -10,8 +10,8 @@ using std::string; using std::vector; using std::unique_ptr; using std::make_uni
 
 class TicTacToe
 {
-friend std::ostream& operator<<(std::ostream& out, std::unique_ptr<TicTacToe>& game);
-friend std::istream& operator>>(std::istream& in, std::unique_ptr<TicTacToe>& game);
+friend std::ostream& operator<<(std::ostream& out, TicTacToe& game);
+friend std::istream& operator>>(std::istream& in, TicTacToe& game);
 
     public:
         

@@ -17,21 +17,21 @@ Win by column if and return true if
 else
 false
 */
-bool TicTacToe::check_column_win()
+bool TicTacToe3::check_column_win()
 {
     if (pegs[3] == pegs[0] && pegs[6] == pegs[3] && pegs[6] != " ")
     {
-        winner = player;
+        //winner = player;
         return true;
     }
     else if (pegs[4] == pegs[1] && pegs[7] == pegs[4] && pegs[4] != " ")
     {
-        winner = player;
+        //winner = player;
         return true;
     }
     else if (pegs[5] == pegs[2] && pegs[8] == pegs[5] && pegs[5] != " ")
     {
-        winner = player;
+        //winner = player;
         return true;
     }
     else 
@@ -49,21 +49,21 @@ Win by row if
 6,7,8 are equal
 */
 
-bool TicTacToe::check_row_win()
+bool TicTacToe3::check_row_win()
 {
     if (pegs[2] == pegs[0] && pegs[1] == pegs[2] && pegs[2] != " ")
     {
-        winner = player;
+        //winner = player;
         return true;
     }
     else if (pegs[4] == pegs[3] && pegs[5] == pegs[4] && pegs[4] != " ")
     {
-        winner = player;
+        //winner = player;
         return true;
     }
     else if (pegs[7] == pegs[6] && pegs[8] == pegs[7] && pegs[7] != " ")
     {
-        winner = player;
+        //winner = player;
         return true;
     }
     else 
@@ -80,16 +80,16 @@ Win diagonally
 6 7 8
 
 */
-bool TicTacToe::check_diagonal_win()
+bool TicTacToe3::check_diagonal_win()
 {
     if (pegs[4] == pegs[0] && pegs[4] == pegs[8] && pegs[4] != " ")
     {
-        winner = player;
+        //winner = player;
         return true;
     }
     else if (pegs[4] == pegs[2] && pegs[6] == pegs[4] && pegs[4] != " ")
     {
-        winner = player;
+        //winner = player;
         return true;
     }
     else 

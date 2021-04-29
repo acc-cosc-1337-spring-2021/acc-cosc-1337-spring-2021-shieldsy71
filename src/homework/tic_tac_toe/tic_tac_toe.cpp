@@ -9,14 +9,14 @@ using std::cout; using std::cin; using std::string; using std::vector;
 
 
 
-std::ostream& operator<<(std::ostream& out, std::unique_ptr<TicTacToe>& game)
+std::ostream& operator<<(std::ostream& out, TicTacToe& game)
 {
     
-    if (game->pegs.size() == 9)
+    if (game.pegs.size() == 9)
     {
-        for(std::size_t i = 1; i <= game->pegs.size(); i++)
+        for(std::size_t i = 1; i <= game.pegs.size(); i++)
         {    
-            out<<game->pegs[i];
+            out<<game.pegs[i];
             if (i == 0 || i == 1 || i == 3 || i == 4 || i == 6 || i == 7)
             {
                 out<<"|";
@@ -29,11 +29,11 @@ std::ostream& operator<<(std::ostream& out, std::unique_ptr<TicTacToe>& game)
         return out;
     }
     
-    else if (game->pegs.size() == 16)
+    else if (game.pegs.size() == 16)
     {
-        for(std::size_t i = 1; i <= game->pegs.size(); i++)
+        for(std::size_t i = 1; i <= game.pegs.size(); i++)
         {    
-            out<<game->pegs[i];
+            out<<game.pegs[i];
             if (i == 0 || i == 1 || i == 2 || i == 4 || i == 5 || i == 6 || i == 8 || i == 9 || i == 10 || i == 12 || i == 13 || i == 14)
             {
                 out<<"|";
