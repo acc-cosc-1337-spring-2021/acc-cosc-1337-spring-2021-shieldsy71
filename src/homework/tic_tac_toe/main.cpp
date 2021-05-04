@@ -2,6 +2,7 @@
 #include "tic_tac_toe_manager.h"
 #include "tic_tac_toe_3.h"
 #include "tic_tac_toe_4.h"
+#include "tic_tac_toe_data.h"
 #include<iostream>
 #include<string>
 #include<vector>
@@ -15,7 +16,8 @@ string choice;
 char go;
 int grid;
 int o, x, t;
-TicTacToeManager manager;
+unique_ptr<TicTacToeManager> manager;
+TicTacToeData data;
 unique_ptr<TicTacToe> game;
 
 
@@ -43,9 +45,8 @@ do
 	
 	
 	
-	manager.save_game(game);
-	manager.get_winner_total(o, x, t);
-
+	manager->save_game(game);
+	manager->get_winner_total(o, x, t);
 	cout<<manager;
 
 	cout<<"\nWould you like to use the program again? Type the letter 'Y' to continue or 'N' to exit: ";

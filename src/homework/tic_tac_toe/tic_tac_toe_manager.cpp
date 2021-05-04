@@ -7,26 +7,16 @@
 #include <memory>
 using std::cout; using std::cin; using std::string; using std::vector; using std::unique_ptr; using std::make_unique;
 
-
-//Overload <<-Loop through vector of TicTacToe and call the TicTacToe cout overload. 
-std::ostream& operator<<(std::ostream& out, const TicTacToeManager& manager)
+TicTacToeManager::TicTacToeManager(TicTacToeData d)
+: data{d}
 {
-    
-    for(auto& game: manager.games)
-    {    
-        out<<*game<<"\n";
+    games = data.get_games();
+    for (auto& game: games)
+    {
+        update_winner_count(game->get_winner());
     }
-
-    out<<"O wins: "<<manager.o_win<<"\n";
-    out<<"X wins: "<<manager.x_win<<"\n";
-    out<<"Ties: "<<manager.ties<<"\n";
-    
-    return out;
 }
 
- 
-//add the TicTacToe to games vector with push_back, call update winner count pass the winner 
-//from TicTacToe to update x, o, or tie totals.
 void TicTacToeManager::save_game(unique_ptr<TicTacToe>& game)
 {
     update_winner_count(game->get_winner());
@@ -34,20 +24,6 @@ void TicTacToeManager::save_game(unique_ptr<TicTacToe>& game)
    
 }
 
-
-//Use references to get the winners. Don't use cout!!!!!!!!
-void TicTacToeManager::get_winner_total(int& o, int& x, int&t)
-{
-    o = o_win;
-    x = x_win;
-    t = ties;
-}
-
-
-std::vector<unique_ptr<TicTacToe>> games;
-
-
-//if winner X increment x_win, if winner O increment o_win, and else increment ties 
 void TicTacToeManager::update_winner_count(string winner)
 {
     if (winner == "X")
@@ -64,3 +40,38 @@ void TicTacToeManager::update_winner_count(string winner)
     }
 
 }
+
+void TicTacToeManager::get_winner_total(int& o, int& x, int&t)
+{
+    o = o_win;
+    x = x_win;
+    t = ties;
+}
+//Overload <<-Loop through vector of TicTacToe and call the TicTacToe cout overload. 
+std::ostream& operator<<(std::ostream& out, const TicTacToeManager& manager)
+{
+    out<<"\nGame History\n";
+    for(auto& game: manager.games)
+    {    
+        out<<*game<<"\n";
+    }
+    
+    out<<"O wins: "<<manager.o_win<<"\n";
+    out<<"X wins: "<<manager.x_win<<"\n";
+    out<<"Ties: "<<manager.ties<<"\n";
+    
+    return out;
+}
+
+TicTacToeManager::~TicTacToeManager()
+{
+    std::cout<<"\n save games\n";
+    data.save_games(games);
+}
+
+
+
+
+
+
+

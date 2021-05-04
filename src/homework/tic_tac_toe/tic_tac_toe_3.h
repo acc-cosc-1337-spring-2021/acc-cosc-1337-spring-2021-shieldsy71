@@ -13,7 +13,7 @@ public:
 
     //TicTacToe3(){};
     TicTacToe3(): TicTacToe(3){};
-
+    TicTacToe3(std::vector<std::string> p, std::string winner): pegs(p), winner(w)){}
 
 private: 
 
