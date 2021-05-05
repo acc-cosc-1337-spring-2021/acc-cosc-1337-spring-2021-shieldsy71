@@ -47,7 +47,7 @@ do
 	
 	manager->save_game(game);
 	manager->get_winner_total(o, x, t);
-	cout<<manager;
+	cout<<*manager;
 
 	cout<<"\nWould you like to use the program again? Type the letter 'Y' to continue or 'N' to exit: ";
 	cin>>go;

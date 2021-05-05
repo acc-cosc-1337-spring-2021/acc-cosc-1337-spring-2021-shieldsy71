@@ -14,7 +14,7 @@ public:
 
     //TicTacToe4(){};
     TicTacToe4(): TicTacToe(4){};
-    TicTacToe4(std::vector<std::string> p, std::string w): pegs(p), winner(w)){}
+    TicTacToe4(std::vector<std::string> p, std::string w): TicTacToe(p,w){}
 
 private: 
 

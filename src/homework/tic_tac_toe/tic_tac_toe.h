@@ -14,15 +14,15 @@ class TicTacToe
     public:
         
         TicTacToe(unsigned int size) : pegs{size * size, " "}{}
-        TicTacToe(std::vector<std::string> p, std::string w): pegs(p), winner(w)){}
+        TicTacToe(std::vector<std::string> p, std::string w): pegs(p), winner(w){}
         //return check_board_full function return value
         bool game_over();
         //Return the player value
         void mark_board(int position);
         //First_player function argument value must be X or O. In function set player(private variable) to first_player function argument. Call the clear_board function.
         void start_game(std::string first_player);
-        void display_board()const;
-        void set_winner();//Keep this or what?
+        //void display_board()const;
+        void set_winner();
         std::string get_player()const{return player;}
         std::string get_winner()const{return winner;}
         std::vector<std::string> get_pegs()const{return pegs;}
@@ -33,7 +33,7 @@ class TicTacToe
         virtual bool check_column_win();
         virtual bool check_row_win();
         virtual bool check_diagonal_win();
-
+        std::vector<std::string> pegs;
     private:
        //Class member variable
         std::string player;

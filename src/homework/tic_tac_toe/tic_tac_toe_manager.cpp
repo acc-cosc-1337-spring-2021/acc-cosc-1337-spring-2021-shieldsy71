@@ -1,10 +1,12 @@
 //cpp
 #include "tic_tac_toe_manager.h"
 #include "tic_tac_toe.h"
+#include "tic_tac_toe_data.h"
 #include<iostream>
 #include<string>
 #include<vector>
 #include <memory>
+#include <utility>
 using std::cout; using std::cin; using std::string; using std::vector; using std::unique_ptr; using std::make_unique;
 
 TicTacToeManager::TicTacToeManager(TicTacToeData d)

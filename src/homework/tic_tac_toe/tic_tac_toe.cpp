@@ -113,7 +113,7 @@ bool TicTacToe::game_over()
 //Mark vector w position -1 equal to player. Call set_next_player private function.
 void TicTacToe::mark_board(int position)
 {
-    game.pegs[position -1] = player;
+    pegs[position -1] = player;
     set_next_player();
 }
 //First_player function argument value must be X or O. In function set player(private variable) to first_player function argument. Call the clear_board function.
