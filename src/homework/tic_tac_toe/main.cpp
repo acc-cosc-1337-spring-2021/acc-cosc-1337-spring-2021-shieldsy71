@@ -16,8 +16,8 @@ string choice;
 char go;
 int grid;
 int o, x, t;
-unique_ptr<TicTacToeManager> manager;
 TicTacToeData data;
+TicTacToeManager manager(data);
 unique_ptr<TicTacToe> game;
 
 
@@ -45,9 +45,9 @@ do
 	
 	
 	
-	manager->save_game(game);
-	manager->get_winner_total(o, x, t);
-	cout<<*manager;
+	manager.save_game(game);
+	manager.get_winner_total(o, x, t);
+	cout<<manager;
 
 	cout<<"\nWould you like to use the program again? Type the letter 'Y' to continue or 'N' to exit: ";
 	cin>>go;
