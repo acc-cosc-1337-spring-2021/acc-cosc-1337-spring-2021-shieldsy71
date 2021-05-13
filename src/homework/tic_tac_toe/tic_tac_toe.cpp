@@ -3,6 +3,7 @@
 #include<iostream>
 #include<string>
 #include<vector>
+#include<memory>
 using std::cout; using std::cin; using std::string; using std::vector;
 
 std::ostream& operator<<(std::ostream& out, TicTacToe& game)

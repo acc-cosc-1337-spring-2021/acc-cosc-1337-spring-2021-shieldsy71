@@ -3,7 +3,7 @@
 #include<string>
 #include<vector>
 #include <math.h>
-
+#include<memory>
 
 #ifndef TIC_TAC_TOE_H
 #define TIC_TAC_TOE_H
